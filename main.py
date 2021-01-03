@@ -26,9 +26,9 @@ def update_color(color):
     if color == 'green':
         green.on()
     if color == 'yellow':
-        yellow.off()
+        yellow.on()
     if color == 'red':
-        red.off()
+        red.on()
 
     return render_template('index.html')
 
