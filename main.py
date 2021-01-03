@@ -10,6 +10,15 @@ yellow = LED(4)
 stop_threads = False
 
 
+def all_off():
+    yellow.off()
+    green.off()
+    red.off()
+
+
+all_off()
+
+
 def help_function(delay=.3):
     all_off()
     while True:
@@ -30,17 +39,10 @@ t_help = threading.Thread(target=help_function)
 
 def start_t_help():
     global t_help
+    global stop_threads
+    stop_threads = False
     t_help = threading.Thread(target=help_function)
     t_help.start()
-
-
-def all_off():
-    yellow.off()
-    green.off()
-    red.off()
-
-
-all_off()
 
 
 @app.route('/')
