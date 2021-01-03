@@ -28,6 +28,12 @@ def help_function(delay=.3):
 t_help = threading.Thread(target=help_function)
 
 
+def start_t_help():
+    global t_help
+    t_help = threading.Thread(target=help_function)
+    t_help.start()
+
+
 def all_off():
     yellow.off()
     green.off()
@@ -62,8 +68,7 @@ def update_color(color):
         setup_func()
         red.on()
     if color == 'help':
-        global t_help
-        t_help.start()
+        start_t_help()
 
     return render_template('index.html')
 
