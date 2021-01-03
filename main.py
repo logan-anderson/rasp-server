@@ -22,12 +22,14 @@ def hello_world():
 
 @app.route('/on/<color>')
 def update_color(color):
-    all_off()
     if color == 'green':
+        all_off()
         green.on()
     if color == 'yellow':
+        all_off()
         yellow.on()
     if color == 'red':
+        all_off()
         red.on()
 
     return render_template('index.html')
